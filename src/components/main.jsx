@@ -1,16 +1,13 @@
 import React from 'react';
 import '../App.css';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 // import LoggedOutModal from './LoggedOutModal';
+import { Switch, Link } from 'react-router-dom';
 
 //Import Components 
 // import ListMessages from './ListMessages';
 // import Profile from './Profile.jsx';
 // import Post from './Post.jsx';
 import Header from './header.jsx';
-
-
-
 
 class Main extends React.Component {
 
@@ -35,10 +32,6 @@ class Main extends React.Component {
     }
 
     render() {
-        const currentLocation = window.location.href
-        const profile = "http://localhost:3000/main/profile"
-        const messages = "http://localhost:3000/main/messages"
-        const post = "http://localhost:3000/main/post"
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
