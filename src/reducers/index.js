@@ -1,6 +1,5 @@
 import { LOGIN } from '../actions';
 
-
 export const theReducer = (state = [], action) => {
     switch (action.type) {
         case LOGIN:
@@ -8,5 +7,7 @@ export const theReducer = (state = [], action) => {
                 ...state,
                 token: action.token
             }
-        }
+        default:
+            console.log("wow");
     }
+}
