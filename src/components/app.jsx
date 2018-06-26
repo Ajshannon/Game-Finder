@@ -14,10 +14,10 @@ class App extends Component {
     return (
         <React.Fragment>
 
-        <div className="ui container">
+        <div className="container">
 
           <div className="App-header">
-            <div className="App-title">
+            <div className="">
               <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <h1> Event Finder </h1></Link>
             </div>
           </div>

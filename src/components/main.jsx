@@ -7,6 +7,7 @@ import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 // import ListMessages from './ListMessages';
 // import Profile from './Profile.jsx';
 // import Post from './Post.jsx';
+import Header from './header.jsx';
 
 
 
@@ -41,13 +42,10 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
-                <div className="ui secondary pointing menu">
-                    <Link   to="/main/profile">Profile</Link>
-                    <Link   to="/main/events">Events</Link>
-                    <Link   to="/main/post">Post</Link><div className="right menu">
-                        <a onClick={this.handleLogout}>Logout</a>
-                    </div>
-                </div>
+                
+                <Header>
+
+                </Header>
 
                 <Switch>
                     {/* <Route path="/main/profile" render={props => <Profile />} /> */}
