@@ -4,6 +4,7 @@ import Main from './main';
 import Footer from "./footer";
 import { Link } from 'react-router-dom';
 import { Route, Switch } from 'react-router-dom';
+import MapContainer from './MapContainer.jsx'
 
 class App extends Component {
   render() {
@@ -23,8 +24,12 @@ class App extends Component {
             <Route path="/main" component={props => <Main />} />
           </Switch>
 
+        <MapContainer />
           <Footer />
         </div>
+
+
+
       </React.Fragment>
     );
   }
