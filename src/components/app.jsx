@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <React.Fragment>
 
-        <div className="ui container">
+        <div>
 
           <div className="App-header">
             <div className="App-title">
@@ -24,7 +24,7 @@ class App extends Component {
             <Route path="/main" component={props => <Main />} />
           </Switch>
 
-        <MapContainer />
+          <MapContainer />
           <Footer />
         </div>
 

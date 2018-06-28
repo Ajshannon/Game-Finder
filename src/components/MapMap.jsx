@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 const evtNames = ['ready', 'click', 'dragend']
 
-const camelize = function(str) {
-    return str.split(' ').map(function(word){
+const camelize = function (str) {
+    return str.split(' ').map(function (word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }).join('');
 }
@@ -70,10 +70,8 @@ export default class Map extends Component {
             const mapRef = this.refs.map;
             const node = ReactDOM.findDOMNode(mapRef);
 
-            let { initialCenter, zoom } = this.props;
-            console.log("initialCenter: San Francisco", initialCenter);
             const { lat, lng } = this.state.currentLocation;
-
+            const { zoom } = this.props
             const center = new maps.LatLng(lat, lng);
             const mapConfig = Object.assign({}, {
                 center: center,
@@ -106,14 +104,29 @@ export default class Map extends Component {
         }
     }
 
+    renderChildren() {
+        const { children } = this.props;
+
+        if (!children) return;
+
+        return React.Children.map(children, c => {
+            return React.cloneElement(c, {
+                map: this.map,
+                google: this.props.google,
+                mapCenter: this.state.currentLocation
+            });
+        })
+    }
+
     render() {
         const style = {
             width: '100%',
-            height: 'calc(100vh - 175px)'
+            height: 'calc(100vh - 170px)'
         }
         return (
             <div ref="map" style={style}>
                 Loading map...
+                {this.renderChildren()}
             </div>
         )
     }
