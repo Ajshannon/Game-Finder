@@ -17,12 +17,8 @@ class App extends Component {
               <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <h1> where's smash? </h1></Link>
             </div>
           </div>
-
-          <Switch>
-            {/* <Route exact path="/" component={props => <Auth />} /> */}
-            <Route path="/main" component={props => <Main />} />
-          </Switch>
-
+          
+          <Main/>
           <Footer />
         </div>
       </React.Fragment>

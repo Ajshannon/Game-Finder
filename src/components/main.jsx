@@ -8,6 +8,7 @@ import { Switch, Link } from 'react-router-dom';
 // import Profile from './Profile.jsx';
 // import Post from './Post.jsx';
 import Header from './header.jsx';
+import MainSlider from './slider.jsx';
 
 class Main extends React.Component {
 
@@ -35,10 +36,8 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
-                
-                <Header>
-
-                </Header>
+                <Header />
+                <MainSlider />
 
                 <Switch>
                     {/* <Route path="/main/profile" render={props => <Profile />} /> */}
