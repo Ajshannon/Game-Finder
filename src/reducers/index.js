@@ -8,6 +8,6 @@ export const theReducer = (state = [], action) => {
                 token: action.token
             }
         default:
-            console.log("wow");
+            // console.log("wow");
     }
 }

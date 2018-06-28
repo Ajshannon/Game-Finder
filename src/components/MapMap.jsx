@@ -3,13 +3,54 @@ import ReactDOM from 'react-dom';
 
 export default class Map extends Component {
 
+    constructor(props) {
+        super(props);
+
+        const {lat, lng} = this.props.initialCenter;
+        this.state = {
+            currentLocation: {
+                lat: lat,
+                lng: lng
+            }
+        }
+    }
+
     componentDidUpdate(prevProps, prevState) {
         if (prevProps.google !== this.props.google) {
             this.loadMap();
         }
+        if (prevState.currentLocation !== this.state.currentLocation) {
+            this.recenterMap();
+        }
+    }
+
+    recenterMap() {
+        const map = this.map;
+        const curr = this.state.currentLocation;
+
+        const google = this.props.google;
+        const maps = google.maps;
+
+        if (map) {
+            let center = new maps.LatLng(curr.lat, curr.lng);
+            map.panTo(center);
+        }
     }
 
     componentDidMount() {
+        if (this.props.centerAroundCurrentLocation) {
+            if (navigator && navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition((pos) => {
+                    const coords = pos.coords;
+                    this.setState({
+                        currentLocation: {
+                            lat: coords.latitude,
+                            lng: coords.longitude
+                        }
+                    })
+                })
+            }
+        }
         this.loadMap();
     }
 
@@ -21,9 +62,10 @@ export default class Map extends Component {
             const mapRef = this.refs.map;
             const node = ReactDOM.findDOMNode(mapRef);
 
-            let zoom = 12;
-            let lat = 39.765880;
-            let lng = -86.157752;
+            let {initialCenter, zoom} = this.props;
+            console.log("initialCenter: San Francisco", initialCenter);
+            const {lat, lng} = this.state.currentLocation;
+
             const center = new maps.LatLng(lat, lng);
             const mapConfig = Object.assign({}, {
                 center: center,
@@ -44,4 +86,20 @@ export default class Map extends Component {
             </div>
         )
     }
+}
+
+// Map.propTypes = {
+//     google: React.PropTypes.object,
+//     zoom: React.PropTypes.number,
+//     initialCenter: React.PropTypes.object
+// }
+
+Map.defaultProps = {
+    zoom: 10,
+    // Indianapolis, by default (because I said so)
+    initialCenter: {
+        lat: 37.7749,
+        lng: -122.4194
+    },
+    centerAroundCurrentLocation: true
 }

@@ -6,17 +6,17 @@ export class Container extends React.Component {
     render() {
         if (!this.props.loaded) {
             return <div>Loading...</div>
+        } else {
+            return (
+                <div>
+                    <Map google={this.props.google} />
+                </div>
+            )
         }
-        console.log("hi");
-        return (
-            <div>
-                <Map google={this.props.google} />
-            </div>
-        )
     }
 }
 
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyC55kNS0hDuzWUDH1ebSBCpEqVveKyouqk',
-    libraries: ['visualization']
+    libraries: ['places']
 })(Container)
