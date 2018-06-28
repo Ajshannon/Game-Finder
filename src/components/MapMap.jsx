@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
+const evtNames = ['ready', 'click', 'dragend']
+
+const camelize = function(str) {
+    return str.split(' ').map(function(word){
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join('');
+}
+
 export default class Map extends Component {
 
     constructor(props) {
         super(props);
 
-        const {lat, lng} = this.props.initialCenter;
+        const { lat, lng } = this.props.initialCenter;
         this.state = {
             currentLocation: {
                 lat: lat,
@@ -62,9 +70,9 @@ export default class Map extends Component {
             const mapRef = this.refs.map;
             const node = ReactDOM.findDOMNode(mapRef);
 
-            let {initialCenter, zoom} = this.props;
+            let { initialCenter, zoom } = this.props;
             console.log("initialCenter: San Francisco", initialCenter);
-            const {lat, lng} = this.state.currentLocation;
+            const { lat, lng } = this.state.currentLocation;
 
             const center = new maps.LatLng(lat, lng);
             const mapConfig = Object.assign({}, {
@@ -72,6 +80,29 @@ export default class Map extends Component {
                 zoom: zoom
             })
             this.map = new maps.Map(node, mapConfig);
+
+            evtNames.forEach(e => {
+                this.map.addListener(e, this.handleEvent(e));
+            });
+
+            maps.event.trigger(this.map, 'ready');
+        }
+    }
+
+    handleEvent(evtName) {
+        let timeout;
+        const handlerName = `on${camelize(evtName)}`;
+
+        return (e) => {
+            if (timeout) {
+                clearTimeout(timeout);
+                timeout = null;
+            }
+            timeout = setTimeout(() => {
+                if (this.props[handlerName]) {
+                    this.props[handlerName](this.props, this.map, e);
+                }
+            }, 0);
         }
     }
 
@@ -88,18 +119,20 @@ export default class Map extends Component {
     }
 }
 
-// Map.propTypes = {
-//     google: React.PropTypes.object,
-//     zoom: React.PropTypes.number,
-//     initialCenter: React.PropTypes.object
-// }
-
 Map.defaultProps = {
     zoom: 10,
-    // Indianapolis, by default (because I said so)
     initialCenter: {
         lat: 37.7749,
         lng: -122.4194
     },
-    centerAroundCurrentLocation: true
+    centerAroundCurrentLocation: true,
+    onDragend: function () {
+        console.log("drag");
+    },
+    onClick: function () {
+        console.log("click");
+    },
+    onReady: function () {
+        console.log("ready");
+    }
 }
