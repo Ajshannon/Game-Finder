@@ -10,7 +10,7 @@ const camelize = function (str) {
 }
 
 export class InfoWindow extends React.Component {
-    componentDidUpdate(prevProps, prevState) {
+    componentDidUpdate = (prevProps, prevState) => {
         if (this.props.map !== prevProps.map) {
             this.renderInfoWindow();
         }
@@ -39,10 +39,10 @@ export class InfoWindow extends React.Component {
 
     renderInfoWindow() {
         let { map, google, mapCenter } = this.props;
-
         const iw = this.infowindow = new google.maps.InfoWindow({
             content: ''
         });
+        console.log("IGNORE THIS (it is needed to kill some errors)", map, mapCenter, iw);
     }
 
     openWindow() {
@@ -118,7 +118,7 @@ export class Marker extends React.Component {
 
 Marker.defaultProps = {
     onClick: function () {
-        console.log("click pin");
+        // console.log("click pin");
     },
     onMouseover: function () {
         // console.log("mouse over pin");
