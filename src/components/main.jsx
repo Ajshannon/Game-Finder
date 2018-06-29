@@ -9,6 +9,7 @@ import { Switch, Link } from 'react-router-dom';
 // import Post from './Post.jsx';
 import Header from './header.jsx';
 import MainSlider from './slider.jsx';
+import PopGames from './popGames.jsx'
 
 class Main extends React.Component {
 
@@ -36,14 +37,13 @@ class Main extends React.Component {
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
-                <Header />
                 <MainSlider />
-
-                <Switch>
-                    {/* <Route path="/main/profile" render={props => <Profile />} /> */}
-                    {/* <Route path="/main/messages" render={props => <ListMessages />} /> */}
-                    {/* <Route path="/main/post" render={props => <Post />} /> */}
-                </Switch>
+                    <Switch>
+                        {/* <Route path="/main/profile" render={props => <Profile />} /> */}
+                        {/* <Route path="/main/messages" render={props => <ListMessages />} /> */}
+                        {/* <Route path="/main/post" render={props => <Post />} /> */}
+                    </Switch>
+                <PopGames />
             </React.Fragment>
         );
     };

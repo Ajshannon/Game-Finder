@@ -10,13 +10,12 @@ class MainSlider extends React.Component {
             <React.Fragment>
                 <Slider>
                     <Slide
-                        src="../public/images/smash.jpg"
+                        src="http://oyster.ignimgs.com/wordpress/stg.ign.com/2018/06/Switch_SuperSmashBrosUltimate_illustration_021.png"
                         title="This is our big Tagline!">
-                        Here's our small slogan.
+                        
                     </Slide>
                     <Slide
-                        src="../public/images/StreetFighter.jpg"
-                        title="Left aligned Caption"
+                        src="http://www.psu.com/media/articles/image/PS4_StreetFighterVscreenshot%5D.jpg"title="Left aligned Caption"
                         placement="left">
                         Here's our small slogan.
                     </Slide>
