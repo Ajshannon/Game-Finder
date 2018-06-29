@@ -23,6 +23,11 @@ export class Container extends React.Component {
     }
 
     onMarkerClick = (props, marker, e) => {
+        if (this.state.showingInfoWindow === true && this.state.activeMarker !== marker) {
+            this.setState({
+                showingInfoWindow: false
+            });
+        }
         this.setState({
             selectedPlace: props,
             activeMarker: marker,
