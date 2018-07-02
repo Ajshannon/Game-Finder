@@ -140,12 +140,12 @@ Map.defaultProps = {
     },
     centerAroundCurrentLocation: true,
     onDragend: function () {
-        console.log("drag");
+        // console.log("drag map");
     },
     onClick: function () {
-        console.log("click");
+        // console.log("click map");
     },
     onReady: function () {
-        console.log("ready");
+        // console.log("map ready");
     }
 }
