@@ -13,20 +13,23 @@ class MMSideBar extends React.Component {
                     fixed
                     blue-grey darken-4
                     
-                    // trigger={<Button>SIDE NAV DEMO</Button>}
+                    trigger={<Button>SIDE NAV DEMO</Button>}
                     options={{ closeOnClick: true }}
                     >
-                    <SideNavItem userView
+                    { <SideNavItem userView
                         user={{
                         background: 'img/office.jpg',
                         image: 'img/yuna.jpg',
                         name: 'John Doe',
                         email: 'jdandturk@gmail.com'
                         }}
-                    />
+                    /> }
+                    <div id="loginBar" class="z-depth-2">
+                        
+                    </div>
                     <MMCollapsible />
 
-                    <SideNavItem href='#!icon' icon='cloud'>First Link With Icon</SideNavItem>
+                    <SideNavItem href='#!icon' icon='cloud'> First Link With Icon</SideNavItem>
                     <SideNavItem href='#!second'>Second Link</SideNavItem>
                     <SideNavItem divider />
                     <SideNavItem subheader>Subheader</SideNavItem>

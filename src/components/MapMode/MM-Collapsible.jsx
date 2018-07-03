@@ -6,11 +6,11 @@ class MMCollapsible extends React.Component{
     render(){
         return (
             
-            <Collapsible accordion defaultActiveKey={1}>
-                <CollapsibleItem id="MMCollasible" header='Game' icon='games'>
+            <Collapsible id="MMCollasible" defaultActiveKey={0}>
+                <CollapsibleItem id="MMCollasible1" header='Game' icon='games'>
                     <MMGamesList />
-                </CollapsibleItem>
-                <CollapsibleItem header='Second' icon='place'>
+                </CollapsibleItem >
+                <CollapsibleItem header='Saved' icon='place'>
                     
                 </CollapsibleItem>
                 <CollapsibleItem header='Third' icon='whatshot'>
