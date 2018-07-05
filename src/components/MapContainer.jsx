@@ -36,11 +36,12 @@ export class Container extends React.Component {
     }
 
     render() {
+
         const style = {
             width: '100%',
             height: '100%'
         }
-        const pos = { lat: 39.683099, lng: -86.148345 }
+
         return (
             <div style={style}>
                 <Map
@@ -48,23 +49,31 @@ export class Container extends React.Component {
                     onClick={this.onMapClick}>
                     <Marker
                         onClick={this.onMarkerClick}
-                        name={`Guardian Games`}
-                        details={`7pm on Fridays`}
-                        position={pos} />
-                    <Marker
-                        onClick={this.onMarkerClick}
-                        name={`Current Location`} />
-                    <Marker
-                        onClick={this.onMarkerClick}
-                        name={`Boss Battle Games`}
-                        details={`4pm on Sundays`}
-                        position={{lat: 39.779038, lng: -85.985527}} />
+                        title={`Current Location`}
+                        icon={'https://i.imgur.com/dFO32RT.png'} />
+                    {this.props.markers.map(m => {
+                        return (
+                            <Marker
+                                onClick={this.onMarkerClick}
+                                title={m.title}
+                                game={m.game}
+                                day={m.day}
+                                time={m.time}
+                                link={m.link}
+                                position={{ lat: m.lat, lng: m.lng }} />
+                        )
+                    })}
                     <InfoWindow
                         marker={this.state.activeMarker}
                         visible={this.state.showingInfoWindow}>
                         <div>
-                            <h5>{this.state.selectedPlace.name}</h5>
-                            <p>{this.state.selectedPlace.details}</p>
+                            <h5>{this.state.selectedPlace.title}</h5>
+                            {this.state.selectedPlace.game &&
+                                <div>
+                                    <p>Playing {this.state.selectedPlace.game} on {this.state.selectedPlace.day} at {this.state.selectedPlace.time}</p>
+                                    <p><a href={this.state.selectedPlace.link}>See more details here</a></p>
+                                </div>
+                            }
                         </div>
                     </InfoWindow>
                 </Map>
