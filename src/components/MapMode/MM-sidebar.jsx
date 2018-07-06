@@ -11,7 +11,6 @@ class MMSideBar extends React.Component {
             <React.Fragment>
                 <SideNav 
                     fixed
-                    blue-grey darken-4
                     
                     trigger={<Button>SIDE NAV DEMO</Button>}
                     options={{ closeOnClick: true }}
@@ -24,7 +23,7 @@ class MMSideBar extends React.Component {
                         email: 'jdandturk@gmail.com'
                         }}
                     /> }
-                    <div id="loginBar" class="z-depth-2">
+                    <div id="loginBar">
                         
                     </div>
                     <MMCollapsible />

@@ -11,7 +11,6 @@ import MMTabs from './MM-tabs';
 
 class MMmain extends React.Component {
 
-
     render() {
         return (
             <React.Fragment>
@@ -20,11 +19,11 @@ class MMmain extends React.Component {
                     <Col s={2} id="MapSideBar" >
                         <MMSidebar />
                     </Col>
-                    <div id="MMright" class="wrapper">
+                    <div id="MMright">
                         <Col s={12} id="MapNavContainer">
                             <MMNavbar id="MMnavbar" />
                             <div id="MMnav2">
-                                <div class="z-depth-2" id="aboveMap">
+                                <div id="aboveMap">
                                     <MMTabs />
                                 </div>
                                 <MapContainer markers={[
