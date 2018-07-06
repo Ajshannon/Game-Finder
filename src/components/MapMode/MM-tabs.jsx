@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tabs, Tab } from 'react-materialize';
+// import { Tabs, Tab } from 'react-materialize';
 
 class MMTabs extends React.Component {
 
