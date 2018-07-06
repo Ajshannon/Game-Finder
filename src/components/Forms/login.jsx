@@ -51,7 +51,6 @@ class Login extends React.Component {
                         <Container>
                             <Row id="LOGContent">
 
-
                                 <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
                                 <Input onChange={ this.passwordOnChange } value={this.state.password} type="password" label="password" s={12} />
 
