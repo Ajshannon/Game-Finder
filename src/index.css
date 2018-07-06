@@ -132,3 +132,87 @@ body {
   padding: 0rem;
   /* position: static; */
 }
+
+
+
+
+/* /////////    Form Styling    ///////// */
+
+/* SIGNUP */
+
+#SUPCard {
+  width: 60vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#SUPContent {
+  
+}
+
+#SUPContainer > div {
+  padding: 30px 10px 30px 10px;
+  
+
+}
+
+#SUPCard > .card-action {
+  display: flex;
+  align-content: center;
+}
+
+.card.large .card-action {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#SUPSubmit {
+  display: flex;
+  margin-left: auto;
+  align-content: center;
+  margin-right: auto;
+}
+
+
+
+/* LOGIN */
+
+#LOGCard {
+  width: 60vw;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#LOGContainer > div {
+  padding: 30px 10px 30px 10px;
+  
+
+}
+
+LOGCard > .card-action {
+  display: flex;
+  align-content: center;
+}
+
+.card.large .card-action {
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#LOGSubmit {
+  display: flex;
+  margin-left: auto;
+  align-content: center;
+  margin-right: auto;
+}
+
+
+
+
+/* POST EVENT */
+
+

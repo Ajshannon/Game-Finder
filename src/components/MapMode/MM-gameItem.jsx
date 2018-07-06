@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, Col, Modal,  } from 'react-materialize';
+import { Card, CardTitle, Col,  } from 'react-materialize';
 
 
 class MMGameItem extends React.Component{

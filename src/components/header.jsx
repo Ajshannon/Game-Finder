@@ -1,6 +1,6 @@
 import React from 'react';
-import { Navbar, NavItem, Icon, Row, Button, Col } from 'react-materialize';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { Navbar, NavItem } from 'react-materialize';
+// import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 class Header extends React.Component {
 

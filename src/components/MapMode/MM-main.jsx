@@ -1,9 +1,9 @@
 import React from 'react';
 import '../../App.css';
-import { Switch, Link } from 'react-router-dom';
+// import { Switch, Link } from 'react-router-dom';
 
 //Import Components 
-import { Row, Col, Icon } from 'react-materialize';
+import { Row, Col } from 'react-materialize';
 import MMNavbar from './MM-navbar';
 import MMSidebar from './MM-sidebar';
 import MapContainer from '../MapContainer';

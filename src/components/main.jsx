@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 // import LoggedOutModal from './LoggedOutModal';
-import { Switch, Link } from 'react-router-dom';
+import { Switch } from 'react-router-dom';
 
 //Import Components 
 // import ListMessages from './ListMessages';
@@ -42,9 +42,10 @@ class Main extends React.Component {
                 <MainSlider />
                 <Nav1 />
                     <Switch>
-                        {/* <Route path="/main/profile" render={props => <Profile />} /> */}
-                        {/* <Route path="/main/messages" render={props => <ListMessages />} /> */}
-                        {/* <Route path="/main/post" render={props => <Post />} /> */}
+                        
+                        {/* <Route path="/main/login" render={props => } /> */}
+                        {/* <Route path="/main/signup" render={props => } /> */}
+                        {/* <Route path="/main/mapmode" render={props => } /> */}
                     </Switch>
                 <PopGames />
             </React.Fragment>

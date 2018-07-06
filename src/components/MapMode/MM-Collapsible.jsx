@@ -1,5 +1,5 @@
 import React from 'react';
-import { Collapsible, CollapsibleItem, Button  } from 'react-materialize';
+import { Collapsible, CollapsibleItem,  } from 'react-materialize';
 import MMGamesList from './MM-gamesList';
 
 class MMCollapsible extends React.Component{
