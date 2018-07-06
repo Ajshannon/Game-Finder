@@ -21,6 +21,28 @@ class App extends Component {
             <Route path="/map" component={props => <MMmain />} />
             <Route path="/main" component={props => <Main />} />
           </Switch>
+          
+          <MapContainer markers={[
+            {
+              title: `Smash Brothers Friday's Final Destination at Guardian Games`,
+              lat: 39.683099,
+              lng: -86.148345,
+              game: 'Super Smash Bros. for Wii U',
+              day: 'Fridays',
+              time: '7:00pm',
+              link: 'https://www.facebook.com/events/1410766155717859/'
+            },
+            {
+              title: 'Salty Sundays at Boss Battle Games',
+              lat: 39.779038,
+              lng: -85.985527,
+              game: 'Super Smash Bros. for Wii U',
+              day: 'Sundays',
+              time: '4:00pm',
+              link: 'https://www.facebook.com/pg/bossbattlegamesindy/events/'
+            }
+          ]}/>
+          
           <Footer />
         </div>
       </React.Fragment>
