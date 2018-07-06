@@ -44,7 +44,8 @@ export class Container extends React.Component {
 
         return (
             <div style={style}>
-                <Map
+                <Map 
+                    
                     google={this.props.google}
                     onClick={this.onMapClick}>
                     <Marker
