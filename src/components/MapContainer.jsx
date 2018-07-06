@@ -52,7 +52,7 @@ export class Container extends React.Component {
                         onClick={this.onMarkerClick}
                         title={`Current Location`}
                         icon={'https://i.imgur.com/dFO32RT.png'} />
-                    {this.props.markers.map(m => {
+                    {this.props.markers.map((m, i) => {
                         return (
                             <Marker
                                 onClick={this.onMarkerClick}
@@ -61,7 +61,8 @@ export class Container extends React.Component {
                                 day={m.day}
                                 time={m.time}
                                 link={m.link}
-                                position={{ lat: m.lat, lng: m.lng }} />
+                                position={{ lat: m.lat, lng: m.lng }}
+                                key={i} />
                         )
                     })}
                     <InfoWindow

@@ -17,7 +17,6 @@ class MMCollapsible extends React.Component{
                     Lorem ipsum dolor sit amet.
                 </CollapsibleItem>
             </Collapsible>
-            
         )
     }
 }

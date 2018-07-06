@@ -5,7 +5,7 @@ import { Row, Input, Container, Card, } from 'react-materialize';
 class SignUp extends React.Component {
 
     state = {
-        
+
         name: '',
         username: '',
         password1: '',
@@ -42,6 +42,30 @@ class SignUp extends React.Component {
       handleSubmit = (e) => {
         // this.props.dispatch(addUser(this.state));
         console.log(this.state)
+
+        fetch("http://159.65.38.99/users/register-raw",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        // 'Authorization': 'Bearer ' + state.token,
+                    },
+                    mode: "cors",
+                    body: JSON.stringify({
+
+                        name: this.state.name,
+                        username: this.state.username,
+                        password1: this.state.password1,
+                        password2: this.state.password2,
+                        email: this.state.email,
+
+                    }),
+                })
+                .then(data => {
+                    console.log("This message was posted: ", data);
+                })
+
+
         this.setState({
             name: '',
             username: '',

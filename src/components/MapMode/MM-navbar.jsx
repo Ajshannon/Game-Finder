@@ -9,7 +9,7 @@ class MMNavbar extends React.Component {
         return (
             <React.Fragment>
                  <Col s={12} style={{padding: 0 + "rem"}}>
-                    <div id="MMnav1" class="z-depth-2">
+                    <div id="MMnav1">
                         <Navbar brand='Wheres Smash?' right>
                             <NavItem href='/'>Login</NavItem>
                             <NavItem href='/'>Sign up</NavItem>
