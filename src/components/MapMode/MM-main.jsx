@@ -11,7 +11,26 @@ import MMTabs from './MM-tabs';
 
 class MMmain extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            markers: []
+        }
+    }
+
+    componentDidMount() {
+        let that = this;
+        fetch('http://159.65.38.99/events')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                that.setState({ markers: json })
+            })
+    }
+
     render() {
+        if (!this.state.markers.length) return null;
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
@@ -26,7 +45,7 @@ class MMmain extends React.Component {
                                 <div id="aboveMap">
                                     <MMTabs />
                                 </div>
-                                <MapContainer />
+                                <MapContainer markers={this.state.markers} />
                                 <div id="underMap">
                                 </div>
                             </div>

@@ -9,27 +9,7 @@ export class Container extends React.Component {
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
-            selectedPlace: {},
-            markers: [
-                {
-                    title: `Smash Brothers Friday's Final Destination at Guardian Games`,
-                    lat: 39.683099,
-                    lng: -86.148345,
-                    game: 'Super Smash Bros. for Wii U',
-                    day: 'Fridays',
-                    time: '7:00pm',
-                    link: 'https://www.facebook.com/events/1410766155717859/'
-                },
-                {
-                    title: 'Salty Sundays at Boss Battle Games',
-                    lat: 39.779038,
-                    lng: -85.985527,
-                    game: 'Super Smash Bros. for Wii U',
-                    day: 'Sundays',
-                    time: '4:00pm',
-                    link: 'https://www.facebook.com/pg/bossbattlegamesindy/events/'
-                }
-            ]
+            selectedPlace: {}
         }
     }
 
@@ -55,17 +35,6 @@ export class Container extends React.Component {
         });
     }
 
-    componentDidMount() {
-        fetch('http://159.65.38.99/events')
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (json) {
-                console.log(json)
-                // this.setState({ markers: json })
-            })
-    }
-
     render() {
 
         const style = {
@@ -83,7 +52,7 @@ export class Container extends React.Component {
                         onClick={this.onMarkerClick}
                         title={`Current Location`}
                         icon={'https://i.imgur.com/dFO32RT.png'} />
-                    {this.state.markers.map((m, i) => {
+                    {this.props.markers.map((m, i) => {
                         return (
                             <Marker
                                 onClick={this.onMarkerClick}
