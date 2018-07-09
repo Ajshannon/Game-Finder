@@ -9,33 +9,46 @@ class MMGameItem extends React.Component {
             <React.Fragment>
                 <Col s={6} id="cardCol">
                     <Card>
-                        <CardTitle image="/images/games/streetfighter5-logo.png">
+                        <CardTitle image="/images/magic.jpg">
                             
                         </CardTitle>
                     </Card>
                 </Col>
                 <Col s={6} id="cardCol">
                     <Card>
-                        <CardTitle image="/images/games/smashwiiu-logo.png">
+                        <CardTitle image="/images/settlersofcatan.jpg">
                             
                         </CardTitle>
                     </Card>
                 </Col>
                 <Col s={6} id="cardCol">
                     <Card>
-                        <CardTitle image="/images/games/yugioh-logo.png">
+                        <CardTitle image="/images/smashmelee.jpg">
                             
                         </CardTitle>
                     </Card>
                 </Col>
                 <Col s={6} id="cardCol">
                     <Card>
-                        <CardTitle image="/images/games/magic-logo.png">
+                        <CardTitle image="/images/smashwiiu.jpg">
                             
                         </CardTitle>
                     </Card>
                 </Col>
-                
+                <Col s={6} id="cardCol">
+                    <Card>
+                        <CardTitle image="/images/streetfighter5.jpg">
+                            
+                        </CardTitle>
+                    </Card>
+                </Col>
+                <Col s={6} id="cardCol">
+                    <Card>
+                        <CardTitle image="/images/yugioh.jpg">
+                            
+                        </CardTitle>
+                    </Card>
+                </Col>
             </React.Fragment>
         )
     }
