@@ -14,6 +14,7 @@ class MMNavbar extends React.Component {
                             <NavItem href='/login'>Login</NavItem>
                             <NavItem href='/'>Sign up</NavItem>
                             <NavItem href='/create-event'>Create Event</NavItem>
+                            
                         </Navbar>
                     </div>
                 </Col>
