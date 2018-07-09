@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavItem, Icon, Col } from 'react-materialize';
+import { Navbar, NavItem, Col } from 'react-materialize';
 
 
 
@@ -10,10 +10,10 @@ class MMNavbar extends React.Component {
             <React.Fragment>
                  <Col s={12} style={{padding: 0 + "rem"}}>
                     <div id="MMnav1">
-                        <Navbar brand='Wheres Smash?' right>
-                            <NavItem href='/'>Login</NavItem>
+                        <Navbar brand='Game Up' right>
+                            <NavItem href='/login'>Login</NavItem>
                             <NavItem href='/'>Sign up</NavItem>
-                            <NavItem href='/'><Icon>more_vert</Icon></NavItem>
+                            <NavItem href='/create-event'>Create Event</NavItem>
                         </Navbar>
                     </div>
                 </Col>

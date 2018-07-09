@@ -7,15 +7,10 @@ class MMCollapsible extends React.Component{
         return (
             
             <Collapsible id="MMCollasible" defaultActiveKey={0}>
-                <CollapsibleItem id="MMCollasible1" header='Game' icon='games'>
+                <CollapsibleItem id="MMCollasible1" header='Games' icon='games'>
                     <MMGamesList />
                 </CollapsibleItem >
-                <CollapsibleItem header='Saved' icon='place'>
-                    
-                </CollapsibleItem>
-                <CollapsibleItem header='Third' icon='whatshot'>
-                    Lorem ipsum dolor sit amet.
-                </CollapsibleItem>
+                
             </Collapsible>
         )
     }

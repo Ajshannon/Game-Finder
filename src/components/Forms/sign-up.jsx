@@ -48,7 +48,7 @@ class SignUp extends React.Component {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        // 'Authorization': 'Bearer ' + state.token,
+                        
                     },
                     mode: "cors",
                     body: JSON.stringify({
@@ -60,6 +60,10 @@ class SignUp extends React.Component {
                         email: this.state.email,
 
                     }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    alert("You've been registered!")
                 })
                 .then(data => {
                     console.log("This message was posted: ", data);

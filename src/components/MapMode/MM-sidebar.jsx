@@ -15,14 +15,14 @@ class MMSideBar extends React.Component {
                     trigger={<Button>SIDE NAV DEMO</Button>}
                     options={{ closeOnClick: true }}
                     >
-                    { <SideNavItem userView
+                    {/* { <SideNavItem userView
                         user={{
                         background: 'img/office.jpg',
                         image: 'img/yuna.jpg',
-                        name: 'John Doe',
+                        name: 'Jack. Avery and Kooper',
                         email: 'jdandturk@gmail.com'
                         }}
-                    /> }
+                    /> } */}
                     <div id="loginBar">
                         
                     </div>
@@ -32,7 +32,7 @@ class MMSideBar extends React.Component {
                     <SideNavItem href='#!second'>Second Link</SideNavItem>
                     <SideNavItem divider />
                     <SideNavItem subheader>Subheader</SideNavItem>
-                    <SideNavItem waves href='#!third'>Third Link With Waves</SideNavItem>
+
                 </SideNav>
             </React.Fragment>
         );

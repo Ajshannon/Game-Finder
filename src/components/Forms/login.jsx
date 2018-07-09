@@ -1,16 +1,15 @@
 import React from 'react';
 import { Row, Input, Container, Card, } from 'react-materialize';
+import { login } from '../../actions';
+import { connect } from 'react-redux';
 
 
 class Login extends React.Component {
 
     state = {
 
-        first: '',
-        last: '',
         username: '',
         password: '',
-        email: ''
 
       }
 
@@ -25,13 +24,33 @@ class Login extends React.Component {
         })
     }
   
-      handleSubmit = (e) => {
-        // this.props.dispatch(addUser(this.state));
-        console.log(this.state)
-        this.setState({
-            username: '',
-            password: '',
-        })
+    handleLogin = () => {
+        console.log("Fetching... ")
+        fetch("https://kwitter-api.herokuapp.com/auth/login",
+          {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            mode: "cors",
+            body: JSON.stringify({
+              username: this.state.username,
+              password: this.state.password,
+            }),
+          })
+          .then(response => response.json())
+          .then(data => {
+            this.props.dispatch(login(data.token));
+            if (data.token) {
+              this.setState({ loggedIn: true });
+            } else {
+              alert("Please register first.");
+            }
+          })
+          .then(
+              console.log("Fetching Complete")
+          )
+          
       }
 
     render() {
@@ -40,7 +59,7 @@ class Login extends React.Component {
                 <Card id="SUPCard" className='large'
                     actions={[ 
                         <div id="LOGSubmit">
-                            <button onClick={ this.handleSubmit }class="btn waves-effect waves-light" type="submit" name="action">Login
+                            <button onClick={ this.handleLogin }class="btn waves-effect waves-light" type="submit" name="action">Login
                                 <i class="material-icons right"></i>
                             </button>
                         </div>
@@ -64,4 +83,4 @@ class Login extends React.Component {
     };
 };
 
-export default Login;
+export default connect()(Login);

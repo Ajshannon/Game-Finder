@@ -75,9 +75,17 @@ body {
 
 #MMnav1 {
   height: 100%;
+  padding-left: 300px;
 }
 #MMnav1 > nav {
-  background-color: #D20014
+  background-color: #D20014,
+  
+}
+.row .col {
+  min-height: 0px;
+}
+nav {
+  background-color: #D20014;
 }
 
 #MMnav2 {
@@ -154,7 +162,6 @@ body {
 #SUPContainer > div {
   padding: 30px 10px 30px 10px;
   
-
 }
 
 #SUPCard > .card-action {
@@ -177,6 +184,11 @@ body {
 
 
 
+.dropdown-content {
+  overflow-y: scroll;
+  max-height: 200px;
+
+}
 /* LOGIN */
 
 #LOGCard {
