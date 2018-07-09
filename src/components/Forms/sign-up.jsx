@@ -97,8 +97,8 @@ class SignUp extends React.Component {
                             <Row id="SUPContent">
                                 <Input onChange={ this.nameOnChange } value={this.state.name} placeholder="First Name" s={12} label="Name" />
                                 <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
-                                <Input onChange={ this.password1OnChange } value={this.state.password1} type="password" label="password" s={12} />
-                                <Input onChange={ this.password2OnChange } value={this.state.password2} type="password" label="password" s={12} />
+                                <Input onChange={ this.password1OnChange } value={this.state.password1} type="password" label="password" s={6} />
+                                <Input onChange={ this.password2OnChange } value={this.state.password2} type="password" label="password" s={6} />
                                 <Input onChange={ this.emailOnChange } value={this.state.email} type="email" label="Email" s={12} />
                             </Row>
                         </Container>
