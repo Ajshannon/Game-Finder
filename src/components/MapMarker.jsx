@@ -42,7 +42,7 @@ export class InfoWindow extends React.Component {
         const iw = this.infowindow = new google.maps.InfoWindow({
             content: ''
         });
-        console.log("IGNORE THIS (it is needed to kill some errors)", map, mapCenter, iw);
+        console.log(map, mapCenter, iw);
     }
 
     openWindow() {

@@ -11,7 +11,26 @@ import MMTabs from './MM-tabs';
 
 class MMmain extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            markers: []
+        }
+    }
+
+    componentDidMount() {
+        let that = this;
+        fetch('http://159.65.38.99/events')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (json) {
+                that.setState({ markers: json })
+            })
+    }
+
     render() {
+        if (!this.state.markers.length) return null;
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
@@ -26,26 +45,7 @@ class MMmain extends React.Component {
                                 <div id="aboveMap">
                                     <MMTabs />
                                 </div>
-                                <MapContainer markers={[
-                                    {
-                                        title: `Smash Brothers Friday's Final Destination at Guardian Games`,
-                                        lat: 39.683099,
-                                        lng: -86.148345,
-                                        game: 'Super Smash Bros. for Wii U',
-                                        day: 'Fridays',
-                                        time: '7:00pm',
-                                        link: 'https://www.facebook.com/events/1410766155717859/'
-                                    },
-                                    {
-                                        title: 'Salty Sundays at Boss Battle Games',
-                                        lat: 39.779038,
-                                        lng: -85.985527,
-                                        game: 'Super Smash Bros. for Wii U',
-                                        day: 'Sundays',
-                                        time: '4:00pm',
-                                        link: 'https://www.facebook.com/pg/bossbattlegamesindy/events/'
-                                    }
-                                ]} />
+                                <MapContainer markers={this.state.markers} />
                                 <div id="underMap">
                                 </div>
                             </div>

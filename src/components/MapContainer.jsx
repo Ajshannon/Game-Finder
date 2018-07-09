@@ -5,7 +5,7 @@ import { Marker, InfoWindow } from './MapMarker.jsx';
 
 export class Container extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             showingInfoWindow: false,
             activeMarker: {},
@@ -44,8 +44,8 @@ export class Container extends React.Component {
 
         return (
             <div style={style}>
-                <Map 
-                    
+                <Map
+
                     google={this.props.google}
                     onClick={this.onMapClick}>
                     <Marker
