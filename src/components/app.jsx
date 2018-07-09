@@ -8,6 +8,7 @@ import { Route, Switch } from 'react-router-dom';
 import MMmain from './MapMode/MM-main.jsx';
 import SignUp from './Forms/sign-up';
 import Login from './Forms/login';
+import CreatEvent from './Forms/create-event';
 
 class App extends Component {
   render() {
@@ -17,6 +18,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={props => <SignUp />} />
             <Route exact path="/login" component={props => <Login />} />
+            <Route exact path="/create-event" component={props => <CreatEvent />} />
             <Route path="/map" component={props => <MMmain />} />
             <Route path="/main" component={props => <Main />} />
           </Switch>

@@ -10,13 +10,7 @@ class MMGamesList extends React.Component {
             <React.Fragment>
                 <Row>
                     <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
-                    <MMGameItem />
+                    
                </Row>
             </React.Fragment>
         );
