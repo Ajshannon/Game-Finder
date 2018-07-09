@@ -18,6 +18,7 @@ class MMNavbar extends React.Component {
                         </Navbar>
                     </div>
                 </Col>
+            
             </React.Fragment>
         );
     };
