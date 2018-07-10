@@ -10,7 +10,7 @@ class MMNavbar extends React.Component {
             <React.Fragment>
                  <Col s={12} style={{padding: 0 + "rem"}}>
                     <div id="MMnav1">
-                        <Navbar brand='Game Up' right>
+                        <Navbar brand='GameUp' right>
                             <NavItem href='/login'>Login</NavItem>
                             <NavItem href='/'>Sign up</NavItem>
                             <NavItem href='/create-event'>Create Event</NavItem>
@@ -18,7 +18,6 @@ class MMNavbar extends React.Component {
                         </Navbar>
                     </div>
                 </Col>
-            
             </React.Fragment>
         );
     };
