@@ -3,9 +3,9 @@ import '../App.css';
 import MainSlider from './slider.jsx';
 import PopGames from './popGames.jsx';
 import MMNavbar from './MapMode/MM-navbar';
-import { Container } from 'react-materialize';
+import { Container, Card, Button } from 'react-materialize';
 import Footer from "./footer";
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Link } from 'react-router-dom';
 // import Header from './header.jsx';
 import MMmain from './MapMode/MM-main.jsx';
 import SignUp from './Forms/sign-up';
@@ -41,7 +41,7 @@ class Main extends React.Component {
                 <Switch>
             <Route exact path="/signup" component={props => 
                                               <div>
-                                                <MMNavbar />
+                                                <MMNavbar id="MMnavbar2" />
                                                 <Container>
                                                   <SignUp />
                                                 </Container>
@@ -49,7 +49,7 @@ class Main extends React.Component {
                                               } />
             <Route exact path="/login" component={props => 
                                                   <div>
-                                                    <MMNavbar />
+                                                    <MMNavbar id="MMnavbar2" />
                                                     <Container>
                                                       <Login />
                                                     </Container>
@@ -57,7 +57,7 @@ class Main extends React.Component {
                                                   } />
             <Route exact path="/create-event" component={props => 
                                                           <div>
-                                                            <MMNavbar />
+                                                            <MMNavbar id="MMnavbar2" />
                                                             <Container>
                                                             <CreatEvent />
                                                             </Container>
@@ -67,11 +67,25 @@ class Main extends React.Component {
             <Route path="/map" component={props => <MMmain />} />
 
           </Switch>
-                <MMNavbar />
+                <MMNavbar id="MMnavbar2" />
                 <MainSlider />
+                <Card id="promoCard1" ClassName='white-text' actions={[
+                    <div>
+                        <h3 className="whiteText">
+                            Looking for game events near you?
+                        </h3>    
+
+                    </div>]}>
+                </Card>
                 <Container>
                     <PopGames />
                 </Container>
+                <Card id="promoCard2" className='white-text' actions={[
+                       
+                        <Link to='/signup' className="whiteText"><Button className="">Sign up here!</Button></Link>
+                    ]}>
+                </Card>
+                     
                 <Footer />
             </React.Fragment>
         );

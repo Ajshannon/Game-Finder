@@ -129,6 +129,8 @@ class CreateEvent extends React.Component {
                                     <option value='Yu-gi-oh'>Yu-gi-oh</option>
                                     <option value='Settlers of Catan'>Settlers of Catan</option>
                                     <option value='Super Smash Bros. Melee'>Super Smash Bros. Melee</option>
+                                    <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
+                                    <option value='Pathfinder'>Pathfinder</option>
                                 </Input>
                                 <Input onChange={ this.latOnChange } value={this.state.lat} type="number" label="latitude" placeholder="39.683099" s={6} />
                                 <Input onChange={ this.lngOnChange } value={this.state.lng} type="number" label="longitude" placeholder="-86.148345" s={6} />
