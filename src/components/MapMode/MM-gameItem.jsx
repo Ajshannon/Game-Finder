@@ -22,7 +22,13 @@ class MMGameItem extends React.Component {
     goSettlers() {
         window.location = '#Settlers of Catan';
     }
-
+    goDnd() {
+        window.location = '#Dungeons and Dragons';
+    }
+    goPathfinder() {
+        window.location = '#Pathfinder';
+    }
+    
     render() {
         return (
             <React.Fragment>
@@ -64,6 +70,20 @@ class MMGameItem extends React.Component {
                 <Col s={6} id="cardCol">
                     <Card>
                         <CardTitle onClick={this.goYugioh} image="/images/yugioh.jpg">
+                            
+                        </CardTitle>
+                    </Card>
+                </Col>
+                <Col s={6} id="cardCol">
+                    <Card>
+                        <CardTitle onClick={this.goDnd} image="/images/dnd.jpg">
+                            
+                        </CardTitle>
+                    </Card>
+                </Col>
+                <Col s={6} id="cardCol">
+                    <Card>
+                        <CardTitle onClick={this.goPathfinder} image="/images/pathfinder.jpg">
                             
                         </CardTitle>
                     </Card>
