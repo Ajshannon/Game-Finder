@@ -11,7 +11,8 @@ class MMNavbar extends React.Component {
             <React.Fragment>
                  <Col s={12} style={{padding: 0 + "rem"}}>
                     
-                        <Navbar href="/" brand='GameUp' right>
+                        <Navbar brand='_GameUp' right>
+                            {/* <Link to='/' /> */}
                             <NavItem > <Link to='/map'>Map</Link> </NavItem>
                             <NavItem> <Link to='/login'>Login</Link></NavItem>
                             <NavItem> <Link to='/signup'>Sign up</Link></NavItem>

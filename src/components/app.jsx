@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 import Main from './main';
-import Footer from "./footer";
 // import { Link } from 'react-router-dom';
 import { Route, Switch, withRouter } from 'react-router-dom';
 // import Header from './header.jsx';
@@ -47,7 +46,6 @@ class App extends Component {
             <Route path="/map" component={props => <MMmain />} />
             <Route path="/" component={props => <Main />} />
           </Switch>
-          <Footer />
         </div>
       </React.Fragment>
     );
