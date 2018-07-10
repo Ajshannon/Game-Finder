@@ -13,7 +13,7 @@ class MMSideBar extends React.Component {
                     fixed
                     
                     trigger={<Button>SIDE NAV DEMO</Button>}
-                    options={{ closeOnClick: true }}
+                    options={{ closeOnClick: false }}
                     >
                     {/* { <SideNavItem userView
                         user={{
@@ -28,10 +28,10 @@ class MMSideBar extends React.Component {
                     </div>
                     <MMCollapsible />
 
-                    <SideNavItem href='#!icon' icon='cloud'> First Link With Icon</SideNavItem>
-                    <SideNavItem href='#!second'>Second Link</SideNavItem>
-                    <SideNavItem divider />
-                    <SideNavItem subheader>Subheader</SideNavItem>
+                    {/* <SideNavItem href='#!icon' icon='cloud'> First Link With Icon</SideNavItem>
+                    <SideNavItem href='#!second'>Second Link</SideNavItem> */}
+                    {/* <SideNavItem divider /> */}
+                    {/* <SideNavItem subheader>Subheader</SideNavItem> */}
 
                 </SideNav>
             </React.Fragment>
