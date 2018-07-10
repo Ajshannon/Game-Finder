@@ -230,6 +230,9 @@ LOGCard > .card-action {
   margin-right: auto;
 }
 
+#myFooter {
+  background-color: #00c3e3;
+}
 
 
 
@@ -237,3 +240,98 @@ LOGCard > .card-action {
 
 
 /* SEARCH BAR  */
+
+
+/* POPULAR GAMES */
+
+
+
+#popCard .card {
+  position: relative;
+  background-color: #fff;
+  transition: box-shadow .25s;
+  border-radius: 2px 2px 2px 2px;
+}
+#popCard .card:hover {
+  outline: 1px solid white;
+  outline: 2px solid orange;
+  outline-offset: -2px;
+  box-shadow: 0 5px 50px #00c3e3; 
+}
+
+#popCard .card > .card-content{
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+#popCard .card > .card-content:hover {
+  transition: box-shadow 2s;
+  opacity: 0.6;
+}
+#MMnavbar2 {
+  box-shadow: 0px 10px #888888;
+}
+#promoCard1 {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+#promoCard1 .card-action{
+  margin-left: auto;
+  margin-right: auto;
+}
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-large):not(.btn-floating) {
+  color: #fff;
+  transition: color .3s ease;
+  text-transform: uppercase;
+}
+
+#promoCard1 {
+  position: relative;
+  margin: 0rem 0 1rem 0;
+  background-color: #00c3e3;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+
+}
+
+#promoCard2 .card-action{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#promoCard2 {
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+#promoCard2 {
+  position: relative;
+  margin: .5rem 0 1rem 0;
+  background-color: #D20014;
+  transition: box-shadow .25s;
+  border-radius: 2px;
+}
+.red {
+  background-color: #D20014;
+}
+.blue {
+  background-color: #00c3e3;
+}
+.redText {
+  color: #D20014
+}
+.blueText {
+  color: #00c3e3
+}
+.whiteText {
+  color: #fff
+}
+.btn {
+  background-color: #00c3e3;
+}
+.indicators {
+  display: none
+}
+.slider {
+  max-height: 400px
+}

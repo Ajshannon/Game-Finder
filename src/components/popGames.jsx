@@ -10,9 +10,6 @@ class PopGames extends React.Component {
             <React.Fragment>
                 <Row>
                     <PopGameItem />
-                    <PopGameItem />
-                    <PopGameItem />
-                    <PopGameItem />
                </Row>
             </React.Fragment>
         );

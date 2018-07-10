@@ -3,7 +3,7 @@ import '../../App.css';
 // import { Switch, Link } from 'react-router-dom';
 
 //Import Components 
-import { Row, Col } from 'react-materialize';
+import { Row, Col, Preloader } from 'react-materialize';
 import MMNavbar from './MM-navbar';
 import MMSidebar from './MM-sidebar';
 import MapContainer from '../MapContainer';
@@ -54,6 +54,7 @@ class MMmain extends React.Component {
                                 <div id="aboveMap">
                                     <MMTabs />
                                 </div>
+                                
                                 <MapContainer markers={markers} />
                                 <div id="underMap">
                                 </div>
