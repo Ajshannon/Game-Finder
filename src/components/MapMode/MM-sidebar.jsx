@@ -1,5 +1,5 @@
 import React from 'react';
-import { SideNav, Button, SideNavItem, } from 'react-materialize';
+import { SideNav, Button, } from 'react-materialize';
 // import MMGamesList from './MM-gamesList';
 import MMCollapsible from './MM-Collapsible';
 // import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';

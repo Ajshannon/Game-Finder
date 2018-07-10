@@ -1,5 +1,6 @@
 import React from 'react';
 import { Navbar, NavItem, Col } from 'react-materialize';
+import { Link } from 'react-router-dom';
 
 
 
@@ -9,14 +10,14 @@ class MMNavbar extends React.Component {
         return (
             <React.Fragment>
                  <Col s={12} style={{padding: 0 + "rem"}}>
-                    <div id="MMnav1">
-                        <Navbar brand='GameUp' right>
-                            <NavItem href='/login'>Login</NavItem>
-                            <NavItem href='/'>Sign up</NavItem>
-                            <NavItem href='/create-event'>Create Event</NavItem>
-                            
+                    
+                        <Navbar href="/" brand='GameUp' right>
+                            <NavItem > <Link to='/map'>Map</Link> </NavItem>
+                            <NavItem> <Link to='/login'>Login</Link></NavItem>
+                            <NavItem> <Link to='/signup'>Sign up</Link></NavItem>
+                            <NavItem> <Link to='/create-event'>Create Event</Link></NavItem>
                         </Navbar>
-                    </div>
+
                 </Col>
             </React.Fragment>
         );

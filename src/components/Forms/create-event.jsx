@@ -1,7 +1,6 @@
 import React from 'react';
 import { Row, Input, Container, Card, } from 'react-materialize';
-// import { connect } from 'react-redux';
-
+import { connect } from 'react-redux';
 
 class CreateEvent extends React.Component {
 
@@ -67,7 +66,7 @@ class CreateEvent extends React.Component {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        // 'Authorization': 'Bearer ' + state.token,
+                        'Authorization': 'Bearer ' + this.props.token,
                     },
                     mode: "cors",
                     body: JSON.stringify({
@@ -123,7 +122,8 @@ class CreateEvent extends React.Component {
                                 </Input>
                                 <Input onChange={ this.latOnChange } value={this.state.lat} type="number" label="latitude" placeholder="39.683099" s={6} />
                                 <Input onChange={ this.lngOnChange } value={this.state.lng} type="number" label="longitude" placeholder="-86.148345" s={6} />
-                                <Input onChange={ this.dayOnChange } id="daySelect"  type="select" label="Day of the week" defaultValue="Sunday" s={6} >
+                                <Input onChange={ this.dayOnChange } id="daySelect"  type="select" label="Day of the week" defaultValue="choose a day" s={6} >
+                                    <option value='Choose a day'>Choose a day</option>
                                     <option value='Sunday'>Sunday</option>
                                     <option value='Monday'>Monday</option>
                                     <option value='Tuesday'>Tuesday</option>
@@ -146,5 +146,8 @@ class CreateEvent extends React.Component {
         );
     };
 };
+const mapStateToProps = (state) => {
+    return { token: state.token }
+  }
 
-export default CreateEvent;
+export default connect(mapStateToProps)(CreateEvent);

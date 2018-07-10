@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 // import LoggedOutModal from './LoggedOutModal';
-import { Switch } from 'react-router-dom';
+
 
 //Import Components 
 // import ListMessages from './ListMessages';
@@ -10,7 +10,7 @@ import { Switch } from 'react-router-dom';
 import Header from './header.jsx';
 import MainSlider from './slider.jsx';
 import PopGames from './popGames.jsx';
-import Nav1 from './nav1.jsx';
+
 
 class Main extends React.Component {
 
@@ -40,13 +40,8 @@ class Main extends React.Component {
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
                 <Header />
                 <MainSlider />
-                <Nav1 />
-                    <Switch>
-                        
-                        {/* <Route path="/main/login" render={props => } /> */}
-                        {/* <Route path="/main/signup" render={props => } /> */}
-                        {/* <Route path="/main/mapmode" render={props => } /> */}
-                    </Switch>
+
+                   
                 <PopGames />
             </React.Fragment>
         );

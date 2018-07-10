@@ -39,38 +39,32 @@ class SignUp extends React.Component {
             email: event.target.value
         })
     }
-      handleSubmit = (e) => {
-        // this.props.dispatch(addUser(this.state));
-        console.log(this.state)
+    handleSubmit = (e) => {
+    // this.props.dispatch(addUser(this.state));
+    console.log(this.state)
 
-        fetch("http://159.65.38.99/users/register-raw",
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        
-                        
-                    },
-                    mode: "cors",
-                    body: JSON.stringify({
+    fetch("http://159.65.38.99/users/register-raw",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                mode: "cors",
+                body: JSON.stringify({
 
-                        name: this.state.name,
-                        username: this.state.username,
-                        password1: this.state.password1,
-                        password2: this.state.password2,
-                        email: this.state.email,
+                    name: this.state.name,
+                    username: this.state.username,
+                    password1: this.state.password1,
+                    password2: this.state.password2,
+                    email: this.state.email,
 
-                    }),
-                })
-                .then(response => response.json())
-                .then(data => {
-                    alert("You've been registered!")
-                })
-                .then(data => {
-                    console.log("This message was posted: ", data);
-                })
-
-
+                }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert("You've been registered!")
+                console.log("This message was posted: ", data);
+            })
         this.setState({
             name: '',
             username: '',
@@ -86,8 +80,8 @@ class SignUp extends React.Component {
                 <Card id="SUPCard" className='large'
                     actions={[ 
                         <div id="SUPSubmit">
-                            <button onClick={ this.handleSubmit }class="btn waves-effect waves-light" type="submit" name="action">Sign Up
-                                <i class="material-icons right">pool</i>
+                            <button onClick={ this.handleSubmit }className="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                                <i className="material-icons right">pool</i>
                             </button>
                         </div>
                     ]}

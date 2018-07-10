@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Input, Container, Card, } from 'react-materialize';
 import { login } from '../../actions';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 
 class Login extends React.Component {
@@ -26,7 +27,7 @@ class Login extends React.Component {
   
     handleLogin = () => {
         console.log("Fetching... ")
-        fetch("https://kwitter-api.herokuapp.com/auth/login",
+        fetch("http://159.65.38.99/users/login-raw",
           {
             method: 'POST',
             headers: {
@@ -40,16 +41,16 @@ class Login extends React.Component {
           })
           .then(response => response.json())
           .then(data => {
-            this.props.dispatch(login(data.token));
-            if (data.token) {
+            this.props.dispatch(login(data));
+            console.log(data);
+            
+            if (this.props.token) {
               this.setState({ loggedIn: true });
             } else {
               alert("Please register first.");
             }
           })
-          .then(
-              console.log("Fetching Complete")
-          )
+          this.props.history.push("/map")
           
       }
 
@@ -59,8 +60,8 @@ class Login extends React.Component {
                 <Card id="SUPCard" className='large'
                     actions={[ 
                         <div id="LOGSubmit">
-                            <button onClick={ this.handleLogin }class="btn waves-effect waves-light" type="submit" name="action">Login
-                                <i class="material-icons right"></i>
+                            <button onClick={ this.handleLogin } className="btn waves-effect waves-light" type="submit" name="action">Login
+                                <i className="material-icons right"></i>
                             </button>
                         </div>
                     ]}
@@ -83,4 +84,8 @@ class Login extends React.Component {
     };
 };
 
-export default connect()(Login);
+const mapStateToProps = (state) => {
+    return { token: state.token }
+  }
+
+export default withRouter(connect(mapStateToProps)(Login));
