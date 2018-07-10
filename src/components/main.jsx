@@ -1,13 +1,5 @@
 import React from 'react';
 import '../App.css';
-// import LoggedOutModal from './LoggedOutModal';
-
-
-//Import Components 
-// import ListMessages from './ListMessages';
-// import Profile from './Profile.jsx';
-// import Post from './Post.jsx';
-import Header from './header.jsx';
 import MainSlider from './slider.jsx';
 import PopGames from './popGames.jsx';
 import MMNavbar from './MapMode/MM-navbar';
