@@ -33,6 +33,11 @@ class MMmain extends React.Component {
 
     render() {
         if (!this.state.markers.length) return null;
+        let markers = this.state.markers;
+        if (window.location.hash) {
+            markers = this.state.markers.filter(marker => marker.game === decodeURI(window.location.hash).slice(1));
+            console.log(`Only showing "` + decodeURI(window.location.hash).slice(1) + `" events`);
+        }
         return (
             <React.Fragment>
                 {/* <LoggedOutModal logOut={this.state.logOut} /> */}
@@ -47,7 +52,7 @@ class MMmain extends React.Component {
                                 <div id="aboveMap">
                                     <MMTabs />
                                 </div>
-                                <MapContainer markers={this.state.markers} />
+                                <MapContainer markers={markers} />
                                 <div id="underMap">
                                 </div>
                             </div>
