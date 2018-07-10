@@ -10,6 +10,7 @@ import '../App.css';
 import Header from './header.jsx';
 import MainSlider from './slider.jsx';
 import PopGames from './popGames.jsx';
+import MMNavbar from './MapMode/MM-navbar';
 
 
 class Main extends React.Component {
@@ -37,11 +38,8 @@ class Main extends React.Component {
     render() {
         return (
             <React.Fragment>
-                {/* <LoggedOutModal logOut={this.state.logOut} /> */}
-                <Header />
+                <MMNavbar />
                 <MainSlider />
-
-                   
                 <PopGames />
             </React.Fragment>
         );

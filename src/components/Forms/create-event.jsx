@@ -87,9 +87,19 @@ class CreateEvent extends React.Component {
                     console.log(data)
                     // alert("This event was posted!")
                 })
-                
-
-
+                .then(
+                    this.setState({
+                        title: "",
+                        author: "",
+                        lat: 0,
+                        lng: 0,
+                        game: "",
+                        day: "",
+                        time: "",
+                        link: ""                
+                    })
+                )
+                this.props.history.push("/map")
       }
 
     render() {
