@@ -47,7 +47,9 @@ class MMmain extends React.Component {
                     </Col>
                     <div id="MMright">
                         <Col s={12} id="MapNavContainer">
-                            <MMNavbar id="MMnavbar" />
+                            <div id="MMnav1">
+                                <MMNavbar id="MMnavbar" />
+                            </div>
                             <div id="MMnav2">
                                 <div id="aboveMap">
                                     <MMTabs />

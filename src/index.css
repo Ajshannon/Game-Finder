@@ -149,14 +149,15 @@ nav {
 /* SIGNUP */
 
 #SUPCard {
-  width: 60vw;
+  width: 40vw;
   height: auto;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 10%;
 }
 
 #SUPContent {
-  
+  margin-top: 60px;
 }
 
 #SUPContainer > div {
@@ -191,12 +192,18 @@ nav {
 }
 /* LOGIN */
 
+
+
 #LOGCard {
   width: 60vw;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 
+}
+
+#LOGContainer {
+  margin-top: 60px;
 }
 
 #LOGContainer > div {
