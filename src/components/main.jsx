@@ -38,35 +38,7 @@ class Main extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Switch>
-            <Route exact path="/signup" component={props => 
-                                              <div>
-                                                <MMNavbar id="MMnavbar2" />
-                                                <Container>
-                                                  <SignUp />
-                                                </Container>
-                                              </div>
-                                              } />
-            <Route exact path="/login" component={props => 
-                                                  <div>
-                                                    <MMNavbar id="MMnavbar2" />
-                                                    <Container>
-                                                      <Login />
-                                                    </Container>
-                                                  </div>
-                                                  } />
-            <Route exact path="/create-event" component={props => 
-                                                          <div>
-                                                            <MMNavbar id="MMnavbar2" />
-                                                            <Container>
-                                                            <CreatEvent />
-                                                            </Container>
-                                                          </div>
-                                                        } />
-
-            <Route path="/map" component={props => <MMmain />} />
-
-          </Switch>
+                
                 <MMNavbar id="MMnavbar2" />
                 <MainSlider />
                 <Card id="promoCard1" ClassName='white-text' actions={[

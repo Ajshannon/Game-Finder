@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Input, Container, Card, } from 'react-materialize';
 import { connect } from 'react-redux';
+import MMNavbar from '../MapMode/MM-navbar.jsx'
+
 
 class CreateEvent extends React.Component {
 
@@ -105,55 +107,57 @@ class CreateEvent extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Card id="SUPCard" className='large'
-                    actions={[ 
-                        <div id="LOGSubmit">
-                            <button onClick={ this.handleSubmit } className="btn waves-effect waves-light" type="submit" name="action">Post Event
-                                <i className="material-icons right"></i>
-                            </button>
+                <MMNavbar />
+                <Container>
+                    <Card id="SUPCard" className='large'
+                        actions={[ 
+                            <div id="LOGSubmit">
+                                <button onClick={ this.handleSubmit } className="btn waves-effect waves-light" type="submit" name="action">Post Event
+                                    <i className="material-icons right"></i>
+                                </button>
+                            </div>
+                        ]}
+                        >
+                        
+                        <div id="LOGContainer">
+                            <Container>
+                                <Row id="LOGContent">
+
+                                    <Input onChange={ this.titleOnChange } value={this.state.title} s={12} label="event title" placeholder="EX: Smash Brothers Friday's Final Destination at Guardian Games" />
+                                    <Input onChange={ this.authorOnChange } value={this.state.author} s={12} label="author" placeholder="EX: Juan-dicimo" />
+                                    <Input onChange={ this.gameOnChange } s={12} type='select' label='Game' icon='games'  defaultValue="choose a game">
+                                        <option value='none'>choose a game</option>
+                                        <option value='Street Fighter V'>Street Fighter 5</option>
+                                        <option value='Super Smash Bros. for Wii U'>Super Smash Wii-u</option>
+                                        <option value='Magic: The Gathering'>Magic the Gathering</option>
+                                        <option value='Yu-gi-oh'>Yu-gi-oh</option>
+                                        <option value='Settlers of Catan'>Settlers of Catan</option>
+                                        <option value='Super Smash Bros. Melee'>Super Smash Bros. Melee</option>
+                                        <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
+                                        <option value='Pathfinder'>Pathfinder</option>
+                                    </Input>
+                                    <Input onChange={ this.latOnChange } value={this.state.lat} type="number" label="latitude" placeholder="39.683099" s={6} />
+                                    <Input onChange={ this.lngOnChange } value={this.state.lng} type="number" label="longitude" placeholder="-86.148345" s={6} />
+                                    <Input onChange={ this.dayOnChange } id="daySelect"  type="select" label="Day of the week" defaultValue="choose a day" s={6} >
+                                        <option value='Choose a day'>Choose a day</option>
+                                        <option value='Sunday'>Sunday</option>
+                                        <option value='Monday'>Monday</option>
+                                        <option value='Tuesday'>Tuesday</option>
+                                        <option value='Wednesday'>Wednesday</option>
+                                        <option value='Thursday'>Thursday</option>
+                                        <option value='Friday'>Friday</option>
+                                        <option value='Saturday'>Saturday</option>
+                                    </Input>
+                                    <Input onChange={ this.timeOnChange } value={this.state.time} type="text" label="Time" placeholder="Ex: 7:00pm" s={6} />
+                                    <Input onChange={ this.linkOnChange } value={this.state.link} type="text" label="link" placeholder="http://www.example.com/" s={12} />
+
+
+
+                                </Row>
+                            </Container>
                         </div>
-                    ]}
-                    >
-                    
-                    <div id="LOGContainer">
-                        <Container>
-                            <Row id="LOGContent">
-
-                                <Input onChange={ this.titleOnChange } value={this.state.title} s={12} label="event title" placeholder="EX: Smash Brothers Friday's Final Destination at Guardian Games" />
-                                <Input onChange={ this.authorOnChange } value={this.state.author} s={12} label="author" placeholder="EX: Juan-dicimo" />
-                                <Input onChange={ this.gameOnChange } s={12} type='select' label='Game' icon='games'  defaultValue="choose a game">
-                                    <option value='none'>choose a game</option>
-                                    <option value='Street Fighter V'>Street Fighter 5</option>
-                                    <option value='Super Smash Bros. for Wii U'>Super Smash Wii-u</option>
-                                    <option value='Magic: The Gathering'>Magic the Gathering</option>
-                                    <option value='Yu-gi-oh'>Yu-gi-oh</option>
-                                    <option value='Settlers of Catan'>Settlers of Catan</option>
-                                    <option value='Super Smash Bros. Melee'>Super Smash Bros. Melee</option>
-                                    <option value='Dungeons and Dragons'>Dungeons and Dragons</option>
-                                    <option value='Pathfinder'>Pathfinder</option>
-                                </Input>
-                                <Input onChange={ this.latOnChange } value={this.state.lat} type="number" label="latitude" placeholder="39.683099" s={6} />
-                                <Input onChange={ this.lngOnChange } value={this.state.lng} type="number" label="longitude" placeholder="-86.148345" s={6} />
-                                <Input onChange={ this.dayOnChange } id="daySelect"  type="select" label="Day of the week" defaultValue="choose a day" s={6} >
-                                    <option value='Choose a day'>Choose a day</option>
-                                    <option value='Sunday'>Sunday</option>
-                                    <option value='Monday'>Monday</option>
-                                    <option value='Tuesday'>Tuesday</option>
-                                    <option value='Wednesday'>Wednesday</option>
-                                    <option value='Thursday'>Thursday</option>
-                                    <option value='Friday'>Friday</option>
-                                    <option value='Saturday'>Saturday</option>
-                                </Input>
-                                <Input onChange={ this.timeOnChange } value={this.state.time} type="text" label="Time" placeholder="Ex: 7:00pm" s={6} />
-                                <Input onChange={ this.linkOnChange } value={this.state.link} type="text" label="link" placeholder="http://www.example.com/" s={12} />
-
-
-
-                            </Row>
-                        </Container>
-                    </div>
-                </Card>
-                
+                    </Card>
+                    </Container>
             </React.Fragment>
         );
     };

@@ -16,30 +16,17 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <Switch>
-            <Route exact path="/signup" component={props => 
-                                              <div>
-                                                <MMNavbar />
-                                                <Container>
-                                                  <SignUp />
-                                                </Container>
-                                              </div>
-                                              } />
-            <Route exact path="/login" component={props => 
-                                                  <div>
-                                                    <MMNavbar />
-                                                    <Container>
-                                                      <Login />
-                                                    </Container>
-                                                  </div>
-                                                  } />
-            <Route exact path="/create-event" component={CreatEvent} />
 
-            <Route path="/map" component={props => <MMmain />} />
-            <Route path="/" component={props => <Main />} />
-          </Switch>
-        </div>
+            
+            <Switch>
+              <Route exact path="/signup" component={ SignUp } />
+              <Route exact path="/login" component={ Login } />
+              <Route exact path="/create-event" component={ CreatEvent } />
+              <Route path="/map" component={ MMmain } />
+              <Route path="/" component={ Main } />
+            </Switch>
+
+
       </React.Fragment>
     );
   }

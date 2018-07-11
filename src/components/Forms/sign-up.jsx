@@ -1,5 +1,7 @@
 import React from 'react';
 import { Row, Input, Container, Card, } from 'react-materialize';
+import MMNavbar from '../MapMode/MM-navbar.jsx'
+
 
 
 class SignUp extends React.Component {
@@ -77,29 +79,31 @@ class SignUp extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Card id="SUPCard" className='large'
-                    actions={[ 
-                        <div id="SUPSubmit">
-                            <button onClick={ this.handleSubmit }className="btn waves-effect waves-light" type="submit" name="action">Sign Up
-                                <i className="material-icons right">pool</i>
-                            </button>
+                <MMNavbar />
+                <Container>
+                    <Card id="SUPCard" className='large'
+                        actions={[ 
+                            <div id="SUPSubmit">
+                                <button onClick={ this.handleSubmit }className="btn waves-effect waves-light" type="submit" name="action">Sign Up
+                                    <i className="material-icons right">pool</i>
+                                </button>
+                            </div>
+                        ]}
+                        >
+                        
+                        <div id="SUPContainer">
+                            <Container>
+                                <Row id="SUPContent">
+                                    <Input onChange={ this.nameOnChange } value={this.state.name} placeholder="First Name" s={12} label="Name" />
+                                    <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
+                                    <Input onChange={ this.password1OnChange } value={this.state.password1} type="password" label="password" s={6} />
+                                    <Input onChange={ this.password2OnChange } value={this.state.password2} type="password" label="password" s={6} />
+                                    <Input onChange={ this.emailOnChange } value={this.state.email} type="email" label="Email" s={12} />
+                                </Row>
+                            </Container>
                         </div>
-                    ]}
-                    >
-                    
-                    <div id="SUPContainer">
-                        <Container>
-                            <Row id="SUPContent">
-                                <Input onChange={ this.nameOnChange } value={this.state.name} placeholder="First Name" s={12} label="Name" />
-                                <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
-                                <Input onChange={ this.password1OnChange } value={this.state.password1} type="password" label="password" s={6} />
-                                <Input onChange={ this.password2OnChange } value={this.state.password2} type="password" label="password" s={6} />
-                                <Input onChange={ this.emailOnChange } value={this.state.email} type="email" label="Email" s={12} />
-                            </Row>
-                        </Container>
-                    </div>
-                </Card>
-                
+                    </Card>
+                </Container>
             </React.Fragment>
         );
     };

@@ -3,6 +3,8 @@ import { Row, Input, Container, Card, } from 'react-materialize';
 import { login } from '../../actions';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
+import MMNavbar from '../MapMode/MM-navbar.jsx'
+
 
 
 class Login extends React.Component {
@@ -57,27 +59,30 @@ class Login extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Card id="SUPCard" className='large'
-                    actions={[ 
-                        <div id="LOGSubmit">
-                            <button onClick={ this.handleLogin } className="btn waves-effect waves-light" type="submit" name="action">Login
-                                <i className="material-icons right"></i>
-                            </button>
+                <MMNavbar />
+                <Container>
+                    <Card id="SUPCard" className='large'
+                        actions={[ 
+                            <div id="LOGSubmit">
+                                <button onClick={ this.handleLogin } className="btn waves-effect waves-light" type="submit" name="action">Login
+                                    <i className="material-icons right"></i>
+                                </button>
+                            </div>
+                        ]}
+                        >
+                        
+                        <div id="LOGContainer">
+                            <Container>
+                                <Row id="LOGContent">
+
+                                    <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
+                                    <Input onChange={ this.passwordOnChange } value={this.state.password} type="password" label="password" s={12} />
+
+                                </Row>
+                            </Container>
                         </div>
-                    ]}
-                    >
-                    
-                    <div id="LOGContainer">
-                        <Container>
-                            <Row id="LOGContent">
-
-                                <Input onChange={ this.usernameOnChange } value={this.state.username} s={12} label="username" placeholder="username" />
-                                <Input onChange={ this.passwordOnChange } value={this.state.password} type="password" label="password" s={12} />
-
-                            </Row>
-                        </Container>
-                    </div>
-                </Card>
+                    </Card>
+                </Container>
                 
             </React.Fragment>
         );
