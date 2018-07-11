@@ -123,9 +123,9 @@ class CreateEvent extends React.Component {
                                 <Input onChange={ this.authorOnChange } value={this.state.author} s={12} label="author" placeholder="EX: Juan-dicimo" />
                                 <Input onChange={ this.gameOnChange } s={12} type='select' label='Game' icon='games'  defaultValue="choose a game">
                                     <option value='none'>choose a game</option>
-                                    <option value='Street Fighter 5'>Street Fighter 5</option>
-                                    <option value='Super Smash Wii-u'>Super Smash Wii-u</option>
-                                    <option value='Magic the Gathering'>Magic the Gathering</option>
+                                    <option value='Street Fighter V'>Street Fighter 5</option>
+                                    <option value='Super Smash Bros. for Wii U'>Super Smash Wii-u</option>
+                                    <option value='Magic: The Gathering'>Magic the Gathering</option>
                                     <option value='Yu-gi-oh'>Yu-gi-oh</option>
                                     <option value='Settlers of Catan'>Settlers of Catan</option>
                                     <option value='Super Smash Bros. Melee'>Super Smash Bros. Melee</option>
