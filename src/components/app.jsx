@@ -34,14 +34,7 @@ class App extends Component {
                                                     </Container>
                                                   </div>
                                                   } />
-            <Route exact path="/create-event" component={props => 
-                                                          <div>
-                                                            <MMNavbar />
-                                                            <Container>
-                                                            <CreatEvent />
-                                                            </Container>
-                                                          </div>
-                                                        } />
+            <Route exact path="/create-event" component={CreatEvent} />
 
             <Route path="/map" component={props => <MMmain />} />
             <Route path="/" component={props => <Main />} />
