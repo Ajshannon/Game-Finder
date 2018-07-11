@@ -49,7 +49,7 @@ class Login extends React.Component {
             if (this.props.token) {
               this.setState({ loggedIn: true });
             } else {
-              alert("Please register first.");
+
             }
           })
           this.props.history.push("/map")
