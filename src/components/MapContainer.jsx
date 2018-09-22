@@ -85,6 +85,6 @@ export class Container extends React.Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: 'AIzaSyC55kNS0hDuzWUDH1ebSBCpEqVveKyouqk',
+    apiKey: 'AIzaSyD3vSJG1O8PoyRR426vKffSxuP7yB2LuCo',
     libraries: ['places']
 })(Container)
