@@ -50,7 +50,7 @@ class Login extends React.Component {
               alert("Please register first.");
             }
           })
-          this.props.history.push("/map")
+
           
       }
 
