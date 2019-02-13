@@ -8,8 +8,10 @@ import { withRouter } from 'react-router-dom';
 class Login extends React.Component {
 
     state = {
+
         username: '',
         password: '',
+
       }
 
     usernameOnChange = (event) => {
@@ -25,7 +27,7 @@ class Login extends React.Component {
   
     handleLogin = () => {
         console.log("Fetching... ")
-        fetch("http://138.197.70.171/users/login-raw",
+        fetch("http://159.65.38.99/users/login-raw",
           {
             method: 'POST',
             headers: {
@@ -41,7 +43,7 @@ class Login extends React.Component {
           .then(data => {
             this.props.dispatch(login(data));
             console.log(data);
-        
+            
             if (this.props.token) {
               this.setState({ loggedIn: true });
             } else {
@@ -62,7 +64,8 @@ class Login extends React.Component {
                                 <i className="material-icons right"></i>
                             </button>
                         </div>
-                    ]}>
+                    ]}
+                    >
                     
                     <div id="LOGContainer">
                         <Container>

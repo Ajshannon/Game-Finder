@@ -99,7 +99,7 @@ class CreateEvent extends React.Component {
                         link: ""                
                     })
                 )
-                this.props.history.push("/map")
+                // this.props.history.push("/map")
       }
 
     render() {
