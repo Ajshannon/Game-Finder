@@ -41,7 +41,7 @@ class Login extends React.Component {
           .then(data => {
             this.props.dispatch(login(data));
             console.log(data);
-            t
+        
             if (this.props.token) {
               this.setState({ loggedIn: true });
             } else {
