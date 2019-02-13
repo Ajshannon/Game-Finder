@@ -118,7 +118,7 @@ class CreateEvent extends React.Component {
                             <Row id="LOGContent">
 
                                 <Input onChange={ this.titleOnChange } value={this.state.title} s={12} label="event title" placeholder="EX: Smash Brothers Friday's Final Destination at Guardian Games" />
-                                <Input onChange={ this.authorOnChange } value={this.state.author} s={12} label="author" placeholder="EX: Juan-dicimo" />
+                                <Input onChange={ this.authorOnChange } value={this.props.token} s={12} label="author" placeholder="EX: Juan-dicimo" />
                                 <Input onChange={ this.gameOnChange } s={12} type='select' label='Game' icon='games'  defaultValue="choose a game">
                                     <option value='none'>choose a game</option>
                                     <option value='Street Fighter 5'>Street Fighter 5</option>
