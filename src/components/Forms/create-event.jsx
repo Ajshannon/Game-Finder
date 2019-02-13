@@ -85,7 +85,7 @@ class CreateEvent extends React.Component {
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    // alert("This event was posted!")
+                    alert("This event was posted!")
                 })
                 .then(
                     this.setState({
@@ -99,7 +99,7 @@ class CreateEvent extends React.Component {
                         link: ""                
                     })
                 )
-                // this.props.history.push("/map")
+                this.props.history.push("/map")
       }
 
     render() {

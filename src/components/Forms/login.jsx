@@ -27,7 +27,7 @@ class Login extends React.Component {
   
     handleLogin = () => {
         console.log("Fetching... ")
-        fetch("http://159.65.38.99/users/login-raw",
+        fetch("http://138.197.70.171/users/login-raw",
           {
             method: 'POST',
             headers: {
