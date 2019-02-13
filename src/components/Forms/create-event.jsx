@@ -61,7 +61,7 @@ class CreateEvent extends React.Component {
         // this.props.dispatch(addUser(this.state));
         console.log(this.state)
 
-        fetch("http://159.65.38.99/events/add-raw",
+        fetch("http://138.197.70.171/events/add-raw",
                 {
                     method: 'POST',
                     headers: {

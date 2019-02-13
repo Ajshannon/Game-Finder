@@ -22,7 +22,7 @@ class MMmain extends React.Component {
 
     componentDidMount() {
         let that = this;
-        fetch('http://159.65.38.99/events')
+        fetch('http://138.197.70.171/events')
             .then(function (response) {
                 return response.json();
             })

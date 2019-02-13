@@ -43,7 +43,7 @@ class SignUp extends React.Component {
     // this.props.dispatch(addUser(this.state));
     console.log(this.state)
 
-    fetch("http://159.65.38.99/users/register-raw",
+    fetch("http://138.197.70.171/users/register-raw",
             {
                 method: 'POST',
                 headers: {
