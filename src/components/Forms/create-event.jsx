@@ -72,20 +72,19 @@ class CreateEvent extends React.Component {
                     body: JSON.stringify({
 
                         title: this.state.title,
-                        author: this.state.author,
+                        author: this.props.token,
                         lat: this.state.lat,
                         lng: this.state.lng,
                         game: this.state.game,
                         day: this.state.day,
                         time: this.state.time,
-                        link: this.state.link
+                        link: this.state.link,
 
                     }),
                 })
                 .then(response => response.json())
                 .then(data => {
                     console.log(data)
-                    alert("This event was posted!")
                 })
                 .then(
                     this.setState({
